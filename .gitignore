@@ -29,11 +29,6 @@ wheels/
 .installed.cfg
 *.egg
 
-# PyInstaller
-#  Usually these files are not necessary to be included in version control
-build/
-dist/
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -74,3 +69,8 @@ cover/
 .vscode/
 *.sublime-workspace
 *.sublime-project
+
+# PyInstaller
+build/
+dist/
+*.spec
