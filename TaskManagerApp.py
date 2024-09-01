@@ -47,6 +47,7 @@ class ToDoApp(QWidget):
         
         # Button functionality
         self.add_button.clicked.connect(self.add_task)
+        self.input_field.returnPressed.connect(self.add_task)
         self.complete_button.clicked.connect(self.complete_task)
         self.remove_uncompleted_button.clicked.connect(self.remove_uncompleted_task)
         self.remove_completed_button.clicked.connect(self.remove_completed_task)

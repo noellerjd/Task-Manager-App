@@ -4,7 +4,6 @@ Welcome to the Task Manager App! This application is designed to help you manage
 
 ![image](https://github.com/user-attachments/assets/b1c049a1-5cee-497a-82dd-ffb9ba8e4963)
 
-
 ## Features
 
 - Add Tasks: Quickly add new tasks to your to-do list.
@@ -54,7 +53,7 @@ Welcome to the Task Manager App! This application is designed to help you manage
 
 #### 3.) Create the Executable:
 
-- Run the following command to create the executable: `pyinstaller --onefile --windowed todo_app.py`.
+- Run the following command to create the executable: `pyinstaller --onefile --windowed TaskManagerApp.py`.
 - This command will generate a dist/ folder containing the standalone executable (TaskManagerApp.exe) and a build/ folder with temporary build files. The .spec file will also be generated in your project directory.
 
 #### 4.) Feel free to move the Executable or create a shortcut!
