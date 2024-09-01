@@ -1,2 +1,4 @@
 tasks.json
 venv
+build\todo_app
+dist
