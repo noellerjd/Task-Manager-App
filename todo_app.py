@@ -88,7 +88,7 @@ class ToDoApp(QWidget):
             task_item = self.uncompleted_list.takeItem(selected_task)  # Remove the task from the uncompleted list
             
             # Add date and time of completion
-            completion_time = QDateTime.currentDateTime().toString("MM-dd-yy H:mm ap") # Formats date and time ex 1/1/24 1:01 pm
+            completion_time = QDateTime.currentDateTime().toString("MM-dd-yy h:mm ap") # Formats date and time ex 1/1/24 1:01 pm
             completed_task = f"{task_item.text()} (Completed on: {completion_time})" # Adds date and time onto the task
             
             # Add the task to the completed list
