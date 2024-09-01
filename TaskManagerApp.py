@@ -1,4 +1,5 @@
 import sys
+import os
 import json
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton, QListWidget, QLabel
 from PyQt5.QtCore import QDateTime
@@ -54,20 +55,31 @@ class ToDoApp(QWidget):
         
         self.load_tasks_into_ui()
     
+    def get_resource_path(self, relative_path):
+        """ Get the absolute path to the resource, works for dev and for PyInstaller """
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+        return os.path.join(base_path, relative_path)
+    
     # Function to load tasks.json
     def load_tasks(self):
+        tasks_path = self.get_resource_path("tasks.json")
         try:
-            with open("tasks.json", "r") as file:
+            with open(tasks_path, "r") as file:
                 self.tasks = json.load(file)
         except (FileNotFoundError, json.JSONDecodeError):
             self.tasks = {"uncompleted": [], "completed": []}
     
     # Function to save tasks to json
     def save_tasks(self):
-        with open("tasks.json", "w") as file:
+        tasks_path = self.get_resource_path("tasks.json")
+        with open(tasks_path, "w") as file:
             json.dump(self.tasks, file)
     
-    # Function to load tasks into ui
+    # Function to load tasks into UI
     def load_tasks_into_ui(self):
         self.uncompleted_list.addItems(self.tasks["uncompleted"])
         self.completed_list.addItems(self.tasks["completed"])
