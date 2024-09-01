@@ -1,103 +1,82 @@
-# To-Do List App
+# Task Manager App
 
-## A simple to-do list application built with Python and PyQt5. This app allows users to manage their tasks with features to add, complete, and remove tasks. Completed tasks are stored with a timestamp.
+Welcome to the Task Manager App! This application is designed to help you manage your tasks effectively. You can easily add, complete, and remove tasks, with completed tasks being stored along with the date and time of completion.
 
-# Features
+## Features
 
-Add Tasks: Easily add new tasks to your to-do list.
+- Add Tasks: Quickly add new tasks to your to-do list.
+- Complete Tasks: Mark tasks as completed and move them to the completed list with a timestamp.
+- Remove Tasks: Easily remove tasks from both the uncompleted and completed lists.
+- Persistent Storage: Your tasks are saved locally and reloaded when the app is reopened.
 
-Complete Tasks: Mark tasks as completed and move them to the completed list with a timestamp.
+## Getting Started
 
-Remove Tasks: Remove tasks from both the uncompleted and completed lists.
+### Prerequisites
 
-Persistent Storage: Tasks are saved locally and reloaded when the app is reopened.
+- Windows Operating System
+- Python 3.6 or higher (if you are running the Python script directly)
+- No Python Knowledge Required if using the provided executable
 
-# Requirements
+## Installation and Setup
 
-Windows Operating System
+### Option 1: Using the Pre-built Executable (Recommended for Non-Technical Users)
 
-No prior Python knowledge is needed if you're using the executable file. If you're running the script directly, you'll need:
+#### 1.) Download the Executable:
 
-- Python 3.6+ installed on your system
+- Go to the Releases section of this repository and download the latest version of the executable file `TaskManagerApp.exe`.
 
-- Required Python packages: PyQt5
+#### 2.) Place the Executable
 
-# Getting Started
+- Move the downloaded `TaskManagerApp.exe` file to a location where you want to keep it!
 
-## Option 1: Using the Executable File (Recommended for Non-Technical Users)
+#### 3.) Create a Desktop Shortcut if needed
 
-Download the Executable:
+- Right-click on the `TaskManagerApp.exe` file, select Send to > Desktop named `TaskManagerApp - Shortcut`
 
-Download the executable file ToDoApp.exe from the releases section (link to your release, if applicable).
-Run the Application:
+#### 4.) Launch the application!
 
-Double-click the ToDoApp.exe file to launch the application.
-Using the App:
+- Double-click the app or shortcut to launch into the Task Manager App!
 
-You can now start adding, completing, and removing tasks using the simple user interface.
-Option 2: Running the Python Script (For Developers or Advanced Users)
-Install Python:
+### Option 2: Building the Executable for Yourself (For Developers or Advanced Users)
 
-Download and install Python from python.org.
-Clone the Repository:
+#### 1.) Clone the repository using Comman prompt, PowerShell etc:
 
-Open a terminal or command prompt and run:
-bash
-Copy code
-git clone https://github.com/yourusername/todo-app-py.git
-Navigate to the project directory:
-bash
-Copy code
-cd todo-app-py
-Set Up a Virtual Environment (Optional but Recommended):
+- `git clone https://github.com/noellerjd/Task-Manager-App.git`
 
-Create a virtual environment to keep dependencies isolated:
-bash
-Copy code
-python -m venv venv
-Activate the virtual environment:
-On Windows:
-bash
-Copy code
-venv\Scripts\activate
-On macOS/Linux:
-bash
-Copy code
-source venv/bin/activate
-Install Dependencies:
+#### 2.) Install Python and PyInstaller:
 
-Install the required Python packages:
-bash
-Copy code
-pip install -r requirements.txt
-Run the Application:
+- if you don't already have python installed, download and install it from [python.org](https://www.python.org/downloads/)
+- Install `PyInstaller` using `pip`: `pip install pyinstaller`
 
-Start the application by running:
-bash
-Copy code
-python todo_app.py
-Option 3: Creating Your Own Executable with PyInstaller
-Install PyInstaller:
+#### 3.) Create the Executable:
 
-If you prefer to create your own executable, install PyInstaller:
-bash
-Copy code
-pip install pyinstaller
-Create the Executable:
+- Run the following command to create the executable: `pyinstaller --onefile --windowed todo_app.py`.
+- This command will generate a dist/ folder containing the standalone executable (TaskManagerApp.exe) and a build/ folder with temporary build files. The .spec file will also be generated in your project directory.
 
-Generate an executable using PyInstaller:
-bash
-Copy code
-pyinstaller --onefile --windowed todo_app.py
-Find the Executable:
+#### 4.) Feel free to move the Executable or create a shortcut!
 
-The executable will be located in the dist directory. You can now run the app by double-clicking the todo_app.exe file in the dist folder.
-Troubleshooting
-If the app doesn't launch: Make sure that all the necessary files are in the same directory as the executable.
-Encountered an error? Run the app from the command prompt to see error messages that might help with debugging.
-Contributing
-Feel free to submit issues or pull requests to help improve the app. Contributions are welcome!
+#### 5.) Double click the Executable to launch the Task Manager App
 
-![image](https://github.com/user-attachments/assets/0ce9e274-b79b-4443-baf4-14529567f107)
+## Using the Task Manager App
 
-This app will store information within local memory as a json file for easy access to old information.
+#### Adding a Task:
+
+Type your task into the input field and click the "Add Task" button. The task will appear in the uncompleted tasks list.
+
+#### Completing a Task:
+
+Select a task from the uncompleted tasks list and click the "Complete Task" button. The task will move to the completed tasks list with the date and time of completion.
+
+#### Removing a Task:
+
+You can remove a task from either the uncompleted or completed tasks list by selecting the task and clicking the "Remove Task" button.
+
+## Uninstallation
+
+To uninstall the Task Manager App:
+
+- Simply delete the TaskManagerApp.exe file from your computer.
+
+### Contact
+
+If you encounter any issues or have questions, feel free to open an issue in the repository!
