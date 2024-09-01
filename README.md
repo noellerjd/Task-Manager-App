@@ -31,8 +31,9 @@ Welcome to the Task Manager App! This application is designed to help you manage
 #### 2.) Place the Executable
 
 - Move the downloaded `TaskManagerApp.exe` file to a location where you want to keep it!
+- It's recommended to keep this application within a folder as this will create a json file to store the information between sessions.
 
-#### 3.) Create a Desktop Shortcut if needed
+#### 3.) Create a Desktop Shortcut (Recommended)
 
 - Right-click on the `TaskManagerApp.exe` file, select Send to > Desktop named `TaskManagerApp - Shortcut`
 
