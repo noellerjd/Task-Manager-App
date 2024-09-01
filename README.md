@@ -25,7 +25,7 @@ Welcome to the Task Manager App! This application is designed to help you manage
 
 #### 1.) Download the Executable:
 
-- Go to the Releases section of this repository and download the latest version of the executable file `TaskManagerApp.exe`.
+- Go to the [Releases](https://github.com/noellerjd/Task-Manager-App/releases) section of this repository and download the latest version of the executable file `TaskManagerApp.exe`.
 
 #### 2.) Place the Executable
 
