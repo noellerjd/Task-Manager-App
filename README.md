@@ -2,6 +2,9 @@
 
 Welcome to the Task Manager App! This application is designed to help you manage your tasks effectively. You can easily add, complete, and remove tasks, with completed tasks being stored along with the date and time of completion.
 
+![image](https://github.com/user-attachments/assets/a7df039e-d3f9-410a-98bb-7a63f8f8663b)
+
+
 ## Features
 
 - Add Tasks: Quickly add new tasks to your to-do list.
