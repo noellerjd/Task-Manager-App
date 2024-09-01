@@ -56,30 +56,36 @@ class ToDoApp(QWidget):
         
         self.load_tasks_into_ui()
     
-    def get_resource_path(self, relative_path):
-        """ Get the absolute path to the resource, works for dev and for PyInstaller """
-        try:
-            # PyInstaller creates a temp folder and stores path in _MEIPASS
-            base_path = sys._MEIPASS
-        except Exception:
+    def get_save_path(self, filename):
+        """Get the path to save the file in the same directory as the executable."""
+        if getattr(sys, 'frozen', False):  # Check if the app is running as a PyInstaller bundle
+            base_path = sys._MEIPASS  # Use the temp directory created by PyInstaller
+            base_path = os.path.dirname(sys.executable)  # Correct to use the directory of the executable
+        else:
             base_path = os.path.abspath(".")
-        return os.path.join(base_path, relative_path)
+        return os.path.join(base_path, filename)
     
     # Function to load tasks.json
     def load_tasks(self):
-        tasks_path = self.get_resource_path("tasks.json")
+        tasks_path = self.get_save_path("tasks.json")
         try:
             with open(tasks_path, "r") as file:
                 self.tasks = json.load(file)
-        except (FileNotFoundError, json.JSONDecodeError):
+                print("Tasks loaded successfully:", self.tasks)  # Debugging line
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"Error loading tasks: {e}")  # Debugging line
             self.tasks = {"uncompleted": [], "completed": []}
-    
+
     # Function to save tasks to json
     def save_tasks(self):
-        tasks_path = self.get_resource_path("tasks.json")
-        with open(tasks_path, "w") as file:
-            json.dump(self.tasks, file)
-    
+        tasks_path = self.get_save_path("tasks.json")
+        try:
+            with open(tasks_path, "w") as file:
+                json.dump(self.tasks, file)
+                print("Tasks saved successfully.")  # Debugging line
+        except Exception as e:
+            print(f"Error saving tasks: {e}")  # Debugging line
+
     # Function to load tasks into UI
     def load_tasks_into_ui(self):
         self.uncompleted_list.addItems(self.tasks["uncompleted"])
