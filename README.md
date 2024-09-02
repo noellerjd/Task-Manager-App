@@ -57,6 +57,7 @@ Welcome to the Task Manager App! This application is designed to help you manage
 #### 3.) Create the Executable:
 
 - Run the following command to create the executable: `pyinstaller --onefile --windowed TaskManagerApp.py`.
+- If using the .spec use this command instead: `pyinstaller TaskManagerApp.spec` or `pyinstaller --clean TaskManagerApp.spec` to ensure a clean packaging if changes were made to the .spec file
 - This command will generate a dist/ folder containing the standalone executable (TaskManagerApp.exe) and a build/ folder with temporary build files. The .spec file will also be generated in your project directory.
 
 #### 4.) Feel free to move the Executable or create a shortcut!
