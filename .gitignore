@@ -73,4 +73,3 @@ cover/
 # PyInstaller
 build/
 dist/
-*.spec
