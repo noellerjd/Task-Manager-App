@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPush
 from PyQt5.QtCore import QDateTime, QTimer, Qt
 from PyQt5.QtGui import QColor, QIcon
 import datetime
-import time
 
 # Function to handle the resource path, making it work both in development and in a PyInstaller bundle
 def resource_path(relative_path):
@@ -253,7 +252,7 @@ class ToDoApp(QWidget):
                 print(f"Current time: {now}")
                 print(f"Reminder time: {reminder_date}")
                 
-                if now >= reminder_date and now.date() == reminder_date.date():
+                if now >= reminder_date and now.date() >= reminder_date.date():
                     print("Notification triggered!")  # For debugging, to ensure this line is reached
                     self.show_notification(task_data["text"], "Reminder!")
                     task_data["reminder_date"] = None  # Optional: Reset reminder to avoid repeated notifications
@@ -266,15 +265,15 @@ class ToDoApp(QWidget):
     # Function to show a desktop notification
     def show_notification(self, title, message):
         # try:
-            # print("Attempting to show notification...") < debugging code
+            # print("Attempting to show notification...")
         icon_path = resource_path('task_mananotification.png')
             # print(f"Icon path: {icon_path}") 
         tray_icon = QSystemTrayIcon(QIcon(icon_path), self)
         tray_icon.setVisible(True)
-        tray_icon.showMessage(message, title, QSystemTrayIcon.Information, 10000)
-        #     print("Notification should be visible")
+        tray_icon.showMessage(message, title, QSystemTrayIcon.Information)
+            # print("Notification should be visible")
         # except Exception as e:
-        #     print(f"Failed to show notification: {e}")
+            # print(f"Failed to show notification: {e}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
