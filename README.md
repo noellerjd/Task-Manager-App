@@ -1,8 +1,11 @@
 # Task Manager App
 
-Welcome to the Task Manager App! This application is designed to help you manage your tasks effectively. You can easily add, complete, and remove tasks, with completed tasks being stored along with the date and time of completion.
+Welcome to the Task Manager App! This application is designed to help you manage your tasks effectively. You can easily add, complete, and remove tasks, with completed tasks being stored along with the date and time of completion. Also now includes Windows 10/11 notifications for tasks that have a reminder date!
 
-![image](https://github.com/user-attachments/assets/b1c049a1-5cee-497a-82dd-ffb9ba8e4963)
+![image](https://github.com/user-attachments/assets/6b15b8ee-0a43-4afd-9112-107a402a8bec)
+
+![image](https://github.com/user-attachments/assets/ba8163f6-3d9f-46fe-b434-49a973cef26b)
+
 
 ## Features
 
