@@ -23,6 +23,7 @@ class ToDoApp(QWidget):
         
         # Sets json format and calls to load old json information
         self.tasks = {"uncompleted": [], "completed": []}
+        self.shown_reminders = set()
         self.load_tasks()
         
         # Main layout
@@ -181,6 +182,8 @@ class ToDoApp(QWidget):
         selected_task = self.uncompleted_list.currentRow()  # Get the index of the selected task
         if selected_task >= 0:  # Make sure a task is selected
             task_item = self.uncompleted_list.takeItem(selected_task)  # Remove the task from the uncompleted list
+            task_data = task_item.data(Qt.UserRole)
+            self.shown_reminders.discard(task_data['text'])
             
             # Add date and time of completion
             completion_time = QDateTime.currentDateTime().toString("MM-dd-yy h:mm ap") # Formats date and time ex 1/1/24 1:01 pm
@@ -249,12 +252,13 @@ class ToDoApp(QWidget):
             if task_data["reminder_date"]:
                 # Parse the reminder date
                 reminder_date = datetime.datetime.strptime(task_data["reminder_date"], "%m-%d-%y %I:%M %p")
-                print(f"Current time: {now}")
-                print(f"Reminder time: {reminder_date}")
                 
-                if now >= reminder_date and now.date() >= reminder_date.date():
+                if (now >= reminder_date and 
+                    now.date() >= reminder_date.date() and 
+                    task_data['text'] not in self.shown_reminders):
                     print("Notification triggered!")  # For debugging, to ensure this line is reached
-                    self.show_notification(task_data["text"], "Reminder!")
+                    self.show_notification("Reminder!", task_data["text"])
+                    self.shown_reminders.add(task_data['text'])  # Mark this task as shown
                     task_data["reminder_date"] = None  # Optional: Reset reminder to avoid repeated notifications
                     self.save_tasks()
 
