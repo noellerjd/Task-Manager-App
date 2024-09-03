@@ -82,7 +82,7 @@ You can remove a task from either the uncompleted or completed tasks list by sel
 
 To uninstall the Task Manager App:
 
-- Simply delete the TaskManagerApp.exe file from your computer.
+- Simply delete the TaskManagerApp folder from your computer.
 
 ### Contact
 
