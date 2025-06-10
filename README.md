@@ -2,6 +2,8 @@
 
 Welcome to the Task Manager App! This application is designed to help you manage your tasks effectively. You can easily add, complete, and remove tasks, with completed tasks being stored along with the date and time of completion. Also now includes Windows 10/11 notifications for tasks that have a reminder date!
 
+I made my Task Manager App in Python to help me personally keep track of events and deadlines. I used JSON to store data locally and wanted it to be something simple that would launch on startup and give notifications for any task that's due. It's a good foundation for further development, and is easily downloadable and works with Windows 10/11. I developed this with the hope that anyone who'd like to use the program wouldn't need any programming knowledge to run the app!
+
 ![image](https://github.com/user-attachments/assets/6b15b8ee-0a43-4afd-9112-107a402a8bec)
 
 ![image](https://github.com/user-attachments/assets/ba8163f6-3d9f-46fe-b434-49a973cef26b)
